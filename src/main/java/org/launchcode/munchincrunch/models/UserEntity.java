@@ -1,5 +1,4 @@
 package org.launchcode.munchincrunch.models;
-
 import jakarta.persistence.*;
 import java.util.List;
 

@@ -1,45 +1,62 @@
 package org.launchcode.munchincrunch.controllers;
 
 import org.launchcode.munchincrunch.models.UserEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.launchcode.munchincrunch.services.UserService;
+
 
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
 
+    private final UserService userService;
+
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
     @GetMapping("/{userId}")
     public ResponseEntity<UserEntity> getUser(@PathVariable Long userId) {
-        // TODO: Implement logic to retrieve and return user information
-        // Replace the placeholder logic with actual implementation
-        UserEntity user = new UserEntity();
-        user.setId(userId);
-        user.setUsername("JohnDoe");
-        // Set more user details as needed
+        UserEntity user = userService.getUserById(userId);
 
-        return ResponseEntity.ok(user);
+        if (user != null) {
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping("/create")
     public ResponseEntity<UserEntity> createUser(@RequestBody UserEntity userEntity) {
-        // TODO: Implement logic to create a new user
-        // Replace the placeholder logic with actual implementation
-        userEntity.setId(1L); // Set a sample ID
-        return ResponseEntity.ok(userEntity);
+
+        UserEntity createdUser = userService.createUser(userEntity);
+        return ResponseEntity.ok(createdUser);
     }
 
     @PutMapping("/{userId}")
     public ResponseEntity<UserEntity> updateUser(@PathVariable Long userId, @RequestBody UserEntity userEntity) {
-        // TODO: Implement logic to update user information
-        // Replace the placeholder logic with actual implementation
-        userEntity.setId(userId); // Update ID for demonstration purposes
-        return ResponseEntity.ok(userEntity);
+
+        UserEntity updatedUser = userService.updateUser(userId, userEntity);
+
+        if (updatedUser != null) {
+            return ResponseEntity.ok(updatedUser);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @DeleteMapping("/{userId}")
     public ResponseEntity<String> deleteUser(@PathVariable Long userId) {
-        // TODO: Implement logic to delete a user
-        // Replace the placeholder logic with actual implementation
-        return ResponseEntity.ok("User deleted");
+
+        boolean deleted = userService.deleteUser(userId);
+        if (deleted) {
+            return ResponseEntity.ok("User deleted");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
+
 }
