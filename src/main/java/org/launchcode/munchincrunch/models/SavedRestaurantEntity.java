@@ -14,6 +14,10 @@ public class SavedRestaurantEntity {
     private String restaurantAddress;
     private String phoneNumber;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
+
     // Constructors, getters, setters
     public Long getId() {
         return id;
@@ -53,5 +57,13 @@ public class SavedRestaurantEntity {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 }
