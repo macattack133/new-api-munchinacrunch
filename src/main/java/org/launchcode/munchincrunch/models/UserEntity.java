@@ -10,12 +10,11 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Will use the identity column strategy
 
     private Long id;
-
     private String username;
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<SavedRestaurantEntity> savedRestaurants;//on user can have
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<SavedRestaurantEntity> savedRestaurants;//one user can have
     // many saved restaurants
 
     // Constructors, getters, setters

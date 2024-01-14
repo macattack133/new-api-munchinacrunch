@@ -16,7 +16,7 @@ public class SavedRestaurantService {
         this.savedRestaurantRepository = savedRestaurantRepository;
     }
 
-    public void saveSavedRestaurant(SavedRestaurantEntity restaurant) {
+    public void saveRestaurant(SavedRestaurantEntity restaurant) {
         savedRestaurantRepository.save(restaurant);
     }
 
