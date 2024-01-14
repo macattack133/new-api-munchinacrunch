@@ -1,6 +1,6 @@
 package org.launchcode.munchincrunch.controllers;
 
-import org.launchcode.munchincrunch.models.SavedRestaurantService;
+import org.launchcode.munchincrunch.services.SavedRestaurantService;
 import org.launchcode.munchincrunch.models.SavedRestaurantEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
