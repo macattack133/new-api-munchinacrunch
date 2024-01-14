@@ -14,8 +14,7 @@ public class UserEntity {
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<SavedRestaurantEntity> savedRestaurants;//one user can have
-    // many saved restaurants
+    // one user can save many restaurants
 
     // Constructors, getters, setters
     public Long getId() {

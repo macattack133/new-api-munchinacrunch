@@ -14,10 +14,6 @@ public class SavedRestaurantEntity {
     private String restaurantAddress;
     private String phoneNumber;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private UserEntity user;
-
     // Constructors, getters, setters
     public Long getId() {
         return id;
