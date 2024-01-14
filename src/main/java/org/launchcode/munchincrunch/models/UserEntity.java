@@ -1,24 +1,22 @@
 package org.launchcode.munchincrunch.models;
+
 import jakarta.persistence.*;
 import java.util.List;
 
+@Entity
 @Table(name = "users") //maps to MySQL
 public class UserEntity {
     @Id //primary key for the users table
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Will use the identity column strategy
 
     private Long id;
+
     private String username;
     private String password;
 
-    @ManyToMany //users can have many favorite dining spots & vice versa
-    @JoinTable(
-            name = "favorite_restaurants",
-            joinColumns = @JoinColumn(name = "users_id"),
-            inverseJoinColumns = @JoinColumn(name = "restaurants_id")
-    )
-
-    private List<FavoriteRestaurantEntity> favoriteRestaurantEntity;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<SavedRestaurantEntity> savedRestaurants;//on user can have
+    // many saved restaurants
 
     // Constructors, getters, setters
     public Long getId() {
