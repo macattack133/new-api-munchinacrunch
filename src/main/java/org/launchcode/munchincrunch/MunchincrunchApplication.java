@@ -9,5 +9,4 @@ public class MunchincrunchApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MunchincrunchApplication.class, args);
 	}
-
 }
