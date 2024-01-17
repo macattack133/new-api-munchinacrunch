@@ -1,12 +1,6 @@
 package org.launchcode.munchincrunch.models;
 
-import org.springframework.data.annotation.Id;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "saved_restaurants") //maps to MySQL

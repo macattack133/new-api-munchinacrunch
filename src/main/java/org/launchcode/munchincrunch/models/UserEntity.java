@@ -2,6 +2,7 @@ package org.launchcode.munchincrunch.models;
 
 import org.springframework.data.annotation.Id;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users") //maps to MySQL

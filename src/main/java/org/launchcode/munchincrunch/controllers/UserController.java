@@ -1,11 +1,10 @@
 package org.launchcode.munchincrunch.controllers;
 
 import org.launchcode.munchincrunch.models.UserEntity;
-import org.launchcode.munchincrunch.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.launchcode.munchincrunch.services.UserService;
 
 @RestController
 @RequestMapping("/api/users")
@@ -32,6 +31,7 @@ public class UserController {
     @PostMapping("/create")
     public ResponseEntity<UserEntity> createUser(@RequestBody UserEntity userEntity) {
 
+
         UserEntity createdUser = userService.createUser(userEntity);
         return ResponseEntity.ok(createdUser);
     }
@@ -39,7 +39,9 @@ public class UserController {
     @PutMapping("/{userId}")
     public ResponseEntity<UserEntity> updateUser(@PathVariable Long userId, @RequestBody UserEntity userEntity) {
 
+
         UserEntity updatedUser = userService.updateUser(userId, userEntity);
+
 
         if (updatedUser != null) {
             return ResponseEntity.ok(updatedUser);
