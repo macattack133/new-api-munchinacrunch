@@ -9,15 +9,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-
     private final UserRepository userRepository;
-
 
     @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
 
     public UserEntity createUser(UserEntity userEntity) {
         return userRepository.save(userEntity);
