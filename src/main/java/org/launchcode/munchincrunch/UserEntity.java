@@ -1,8 +1,15 @@
-package org.launchcode.munchincrunch.models;
+package org.launchcode.munchincrunch;
 
 import org.springframework.data.annotation.Id;
 import javax.persistence.*;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Table(name = "users") //maps to MySQL
@@ -14,8 +21,7 @@ public class UserEntity {
     private String username;
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    // one user can save many restaurants
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)// one user can save many restaurants
 
     // Constructors, getters, setters
     public Long getId() {

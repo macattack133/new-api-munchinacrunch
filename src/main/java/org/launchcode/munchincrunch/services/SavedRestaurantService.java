@@ -1,7 +1,7 @@
 package org.launchcode.munchincrunch.services;
 
-import org.launchcode.munchincrunch.models.SavedRestaurantEntity;
-import org.launchcode.munchincrunch.models.data.SavedRestaurantRepository;
+import org.launchcode.munchincrunch.SavedRestaurantEntity;
+import org.launchcode.munchincrunch.data.SavedRestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

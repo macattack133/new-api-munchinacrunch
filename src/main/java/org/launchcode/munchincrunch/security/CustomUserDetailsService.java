@@ -1,6 +1,6 @@
 package org.launchcode.munchincrunch.security;
 
-import org.launchcode.munchincrunch.models.data.UserRepository;
+import org.launchcode.munchincrunch.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -8,10 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.launchcode.munchincrunch.models.UserEntity;
-
-import java.util.Collections;
+import org.launchcode.munchincrunch.UserEntity;
 import java.util.Collection;
+import java.util.Collections;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

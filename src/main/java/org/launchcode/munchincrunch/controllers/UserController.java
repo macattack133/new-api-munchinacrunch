@@ -1,6 +1,6 @@
 package org.launchcode.munchincrunch.controllers;
 
-import org.launchcode.munchincrunch.models.UserEntity;
+import org.launchcode.munchincrunch.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

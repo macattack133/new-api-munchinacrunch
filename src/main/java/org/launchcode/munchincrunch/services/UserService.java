@@ -1,7 +1,7 @@
 package org.launchcode.munchincrunch.services;
 
-import org.launchcode.munchincrunch.models.UserEntity;
-import org.launchcode.munchincrunch.models.data.UserRepository;
+import org.launchcode.munchincrunch.UserEntity;
+import org.launchcode.munchincrunch.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
