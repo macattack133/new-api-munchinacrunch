@@ -1,7 +1,6 @@
 package org.launchcode.munchincrunch.models;
 
 import org.springframework.data.annotation.Id;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
