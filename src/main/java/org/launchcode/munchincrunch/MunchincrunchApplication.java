@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan
+@EntityScan(basePackages = "org.launchcode.munchincrunch")
 public class MunchincrunchApplication {
 
 	public static void main(String[] args) {
