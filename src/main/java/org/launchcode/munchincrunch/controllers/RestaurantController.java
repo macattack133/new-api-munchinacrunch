@@ -26,3 +26,4 @@ public class RestaurantController {
         return randomizerService.getRandomRestaurant(restaurantList);
     }
 }
+
