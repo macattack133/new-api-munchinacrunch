@@ -1,4 +1,4 @@
-package org.launchcode.munchincrunch.models;
+package org.launchcode.munchincrunch;
 
 import jakarta.persistence.*;
 
@@ -40,3 +40,5 @@ public class Restaurant {
     }
 
 }
+
+//this is duplicate code that merged over?

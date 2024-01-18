@@ -1,12 +1,13 @@
 package org.launchcode.munchincrunch;
 
 import org.springframework.data.annotation.Id;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.OneToMany;
-import javax.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
+import java.util.List;
 
 @Entity
 @Table(name = "users") //maps to MySQL
@@ -18,7 +19,8 @@ public class UserEntity {
     private String username;
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)// one user can save many restaurants
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<SavedRestaurantEntity> savedRestaurants;
 
     // Constructors, getters, setters
     public Long getId() {
