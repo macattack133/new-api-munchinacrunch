@@ -15,10 +15,12 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class UserAuthentication {
 
     private final UserDetailsService userDetailsService;
+    private final AuthenticationManagerBuilder auth;
 
     @Autowired
-    public UserAuthentication(UserDetailsService userDetailsService) {
+    public UserAuthentication(UserDetailsService userDetailsService, AuthenticationManagerBuilder auth) {
         this.userDetailsService = userDetailsService;
+        this.auth = auth;
     }
 
     @Bean
@@ -40,9 +42,7 @@ public class UserAuthentication {
         return new BCryptPasswordEncoder();
     }
 
-    // Configured authentication manager to use the custom UserDetailsService
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+    public void configureGlobal(AuthenticationManagerBuilder auth, UserDetailsService userDetailsService) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 }

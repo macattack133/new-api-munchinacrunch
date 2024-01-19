@@ -33,6 +33,7 @@ dependencies {
 
 	// Security dependencies
 	implementation "org.springframework.boot:spring-boot-starter-security"
+	implementation "org.springframework.boot:spring-boot-starter-security:3.2.1"
 
 	// Development and testing dependencies
 	developmentOnly 'org.springframework.boot:spring-boot-devtools:3.2.1'

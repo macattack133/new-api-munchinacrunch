@@ -1,7 +1,6 @@
 //package org.launchcode.munchincrunch.services;
 //
-//import org.launchcode.munchincrunch.models.Restaurant;
-//import org.launchcode.munchincrunch.repositories.RestaurantRepository;
+//import org.launchcode.munchincrunch.Restaurant;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Service;
 //
