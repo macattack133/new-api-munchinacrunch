@@ -30,5 +30,8 @@ public class SavedRestaurantService {
         return savedRestaurantRepository.findById(id);
     }
 
+    public List<SavedRestaurantEntity> getRestaurantsByQualities(List<String> qualities) {
+        return null;
+    }
 }
 

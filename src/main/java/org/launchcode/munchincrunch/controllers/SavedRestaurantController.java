@@ -29,4 +29,9 @@ public class SavedRestaurantController {
         List<SavedRestaurantEntity> savedRestaurants = savedRestaurantService.getSavedRestaurants();
         return ResponseEntity.ok(savedRestaurants);
     }
+    @GetMapping("/filtered")
+    public ResponseEntity<List<SavedRestaurantEntity>> getFilteredRestaurants(@RequestParam List<String> qualities) {
+        List<SavedRestaurantEntity> filteredRestaurants = savedRestaurantService.getRestaurantsByQualities(qualities);
+        return ResponseEntity.ok(filteredRestaurants);
+    }
 }
